@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Canvas</title>
+  </head>
+
+<body>
+
+<canvas id="canvas" width="1000" height="500" style="border:2px solid #000000;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+var canvas = document.querySelector('canvas');
+var ctx = canvas.getContext('2d');
+var x = 0
+var y = 0
+var colorPicker = document.querySelector('colorPicker')
+var defaultColor = 'red'
+var radius = 20
+var i = 2
+draw();
+
+
+function draw(){
+    ctx.beginPath();
+    ctx.fillStyle = defaultColor;
+    ctx.arc(x,y, radius,0, 2 * Math.PI)
+    ctx.fill();
+}
+
+
+window.addEventListener('mousemove', function (e) {
+console.log(e.pageX);
+x=e.pageX;
+console.log(e.pageY);
+y=e.pageY;
+draw()
+})
+
+window.addEventListener('keyup', function (e) {
+if (e.keyCode==66){
+    defaultColor = 'blue';
+   }
+else if (e.keyCode==89){
+    defaultColor = 'yellow';
+   }
+else if (e.keyCode==71){
+    defaultColor = 'green';
+   }
+else if (e.keyCode==82){
+    defaultColor = 'red';
+   }
+
+else if (e.keyCode==32){
+   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+
+else if (e.keyCode==40){
+    radius = (20-i, i>0)
+   }
+
+else if (e.keyCode==38){
+  radius = (20+i, i>0, i++)
+  }
+
+console.log(e.keyCode);
+draw()
+})
+
+
+canvas.addEventListener('touchstart', function(e){
+
+
+});
+
+canvas.addEventListener('touchmove', function (e) {
+    x = e.touches[0].screenX;
+    y = e.touches[0].screenY;
+        });
+
+
+//space = 32
+//up arrow = 38
+//down arrow = 40
+//left arrow = 37
+//right arrow = 39
+</script>
+
+<label for="colorPicker">Click to pick a color:</label>
+<input type="color" id = "colorPicker" value="#ff0000">
+
+</body>
+</html>
