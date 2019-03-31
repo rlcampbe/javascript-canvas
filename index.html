@@ -3,11 +3,13 @@
   <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My Canvas</title>
+  <link rel="stylesheet" type="text/css" href="css/default.css">
+  <link rel="stylesheet" type="text/css" href="css/java.css">
   </head>
 
 <body>
 
-<canvas id="canvas" width="1000" height="500" style="border:2px solid #000000;">
+<canvas id="canvas" width="1000" height="700" style="border:2px solid #000000;">
 Your browser does not support the HTML5 canvas tag.</canvas>
 
 <script>
@@ -68,7 +70,22 @@ console.log(e.keyCode);
 draw()
 })
 
+//mobile orientation
 
+//window.addEventListener('resize', canvasSize, false); (this is more so for desktop?)
+var imgData = ctx.getImageData(0,0, canvas.width, canvas.height)
+
+window.addEventListener('orientationchange', canvasSize, false);
+canvasSize();
+
+// function canvasSize(){
+//  canvas.width = window.innerWidth;
+//  canvas.height = window.innerHeight;
+// }
+
+ctx.putImageData(imgData, 0, 0);
+
+//mobile touchscreen
 canvas.addEventListener('touchstart', function(e){
 
 
