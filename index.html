@@ -73,25 +73,27 @@ draw()
 //mobile orientation
 
 //window.addEventListener('resize', canvasSize, false); (this is more so for desktop?)
-var imgData = ctx.getImageData(0,0, canvas.width, canvas.height)
 
 window.addEventListener('orientationchange', canvasSize, false);
 canvasSize();
 
-// function canvasSize(){
-//  canvas.width = window.innerWidth;
-//  canvas.height = window.innerHeight;
-// }
-
-ctx.putImageData(imgData, 0, 0);
 
 //mobile touchscreen
-canvas.addEventListener('touchstart', function(e){
-
-
+canvas.addEventListener('ontouchstart', function(e){
+console.log(e.pageX);
+x=e.pageX;
+console.log(e.pageY);
+y=e.pageY;
+draw()
 });
 
-canvas.addEventListener('touchmove', function (e) {
+
+canvas.addEventListener('ontouchmove', function (e) {
+    x = e.touches[0].screenX;
+    y = e.touches[0].screenY;
+        });
+
+canvas.addEventListener('ontouchend', function (e) {
     x = e.touches[0].screenX;
     y = e.touches[0].screenY;
         });
