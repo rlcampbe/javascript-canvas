@@ -79,12 +79,12 @@ draw()
 //mobile orientation
 
 
-// canvas.addEventListener('resize', nuCanvasSize, false);
-// function nuCanvasSize(){
-//    canvas.width = window.innerWidth;
-//    canvas.height = window.innerHeight;
-//    draw();
-// }
+canvas.addEventListener('resize', nuCanvasSize, false);
+function nuCanvasSize(){
+   canvas.width = window.innerWidth;
+   canvas.height = window.innerHeight;
+   draw();
+}
 //
 // canvas.addEventListener('orientationchange', canvasOrien, false);
 // function canvasOrien(){

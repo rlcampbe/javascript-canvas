@@ -1,8 +1,8 @@
-html body{
+/* html body{
 overflow: hidden;
-}
+} */
 
-#canvas {
+/* #canvas {
   max-width: 100%;
   height: auto;
 }
@@ -14,4 +14,4 @@ overflow: hidden;
 @media screen and (orientation:landscape) {
          window.orientation == -90;
          window.orientation == 90;
-   }
+   } */
