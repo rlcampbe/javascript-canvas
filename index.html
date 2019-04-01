@@ -77,29 +77,29 @@ draw()
 })
 
 //mobile orientation
-
-canvas.addEventListener('resize', nuCanvasSize, false);
-function nuCanvasSize(){
-   canvas.width = window.innerWidth;
-   canvas.height = window.innerHeight;
-   draw();
-}
-
-canvas.addEventListener('orientationchange', canvasOrien, false);
-function canvasOrien(){
-    window.orientation == 0
-
-}
+//
+// canvas.addEventListener('resize', nuCanvasSize, false);
+// function nuCanvasSize(){
+//    canvas.width = window.innerWidth;
+//    canvas.height = window.innerHeight;
+//    draw();
+// }
+//
+// canvas.addEventListener('orientationchange', canvasOrien, false);
+// function canvasOrien(){
+//     window.orientation == 0
+//
+// }
 
 
 //mobile touchscreen
-canvas.addEventListener('touchmove', function(event) {
-    if (event.targetTouches.length == 1) {
-    var touch = event.targetTouches[0];
-    canvas.style.left = touch.pageX + 'px';
-    canvas.style.top = touch.pageY + 'px';
-}
-}, false);
+// canvas.addEventListener('touchmove', function(event) {
+//     if (event.targetTouches.length == 1) {
+//     var touch = event.targetTouches[0];
+//     canvas.style.left = touch.pageX + 'px';
+//     canvas.style.top = touch.pageY + 'px';
+// }
+// }, false);
 //
 //
 // canvas.addEventListener('ontouchmove', function (e) {
