@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>My Canvas</title>
   <link rel="stylesheet" type="text/css" href="css/default.css">
   <link rel="stylesheet" type="text/css" href="css/java.css">
@@ -88,22 +88,18 @@ function nuCanvasSize(){
 canvas.addEventListener('orientationchange', canvasOrien, false);
 function canvasOrien(){
     window.orientation == 0
-    window.orientation == -90
-    window.orientation == 90
+
 }
 
 
 //mobile touchscreen
-canvas.ontouchstart = touchScreen();
-
-function touchScreen(){
-
+canvas.addEventListener('touchmove', function(event) {
+    if (event.targetTouches.length == 1) {
+    var touch = event.targetTouches[0];
+    canvas.style.left = touch.pageX + 'px';
+    canvas.style.top = touch.pageY + 'px';
 }
-// canvas.addEventListener('ontouchstart', function(e){
-//     getTouchPos();
-//     drawDot(ctx, touchX, touchY, 12);
-//     event.preventDefault();
-// })
+}, false);
 //
 //
 // canvas.addEventListener('ontouchmove', function (e) {
