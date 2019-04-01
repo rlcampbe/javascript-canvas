@@ -3,15 +3,15 @@ overflow: hidden;
 } */
 
 #canvas {
-  max-width: 640px;
-  height: 1334px;
-} */
+  max-width: 750px;
+  max-height: 1334px;
+}
 
-@media screen and (orientation:portrait) {
+/* @media screen and (orientation:portrait) {
      window.orientation == 0;
    }
 
 @media screen and (orientation:landscape) {
          window.orientation == -90;
          window.orientation == 90;
-   }
+   } */
