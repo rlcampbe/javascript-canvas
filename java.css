@@ -13,8 +13,7 @@ overflow: hidden;
          window.orientation == -90;
          window.orientation == 90;
    } */
-@media screen and (max-width: 1000px) and (min-width: 800px) {
-   #canvas{
-        max-width: 80%;
-}
+
+@media screen and (max-width:800px) {
+  width: 80%;
 }

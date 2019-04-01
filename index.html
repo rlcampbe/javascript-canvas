@@ -9,7 +9,7 @@
 
 <body>
 
-<canvas id="canvas" width="1000" height="500" style="border:2px solid #000000;">
+<canvas id="canvas" style="border:2px solid #000000;">
 Your browser does not support the HTML5 canvas tag.</canvas>
 
 <script>
@@ -86,23 +86,23 @@ draw()
 //    draw();
 // }
 
-canvas.addEventListener('orientationchange', canvasOrien, false);
-function canvasOrien(){
-    window.orientation == 0
+// canvas.addEventListener('orientationchange', canvasOrien, false);
+// function canvasOrien(){
+//     window.orientation == 0
+//
+// }
 
-}
 
-
-//mobile touchscreen
-canvas.addEventListener('ontouchstart', function (e){
-  e.preventDefault();
-  brushMove();
-}, false);
-
-canvas.addEventListener('touchmove', function(event) {
-    x = event.pageX;
-    y = event.pageY;
-}, false);
+// //mobile touchscreen
+// canvas.addEventListener('ontouchstart', function (e){
+//   e.preventDefault();
+//   brushMove();
+// }, false);
+//
+// canvas.addEventListener('touchmove', function(event) {
+//     x = event.pageX;
+//     y = event.pageY;
+// }, false);
 //
 //
 // canvas.addEventListener('ontouchmove', function (e) {
