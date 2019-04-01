@@ -94,6 +94,15 @@ draw()
 
 
 // //mobile touchscreen
+
+
+canvas.addEventListener('touchmove', touchscreen, event.preventDefault())
+function touchscreen(move) {
+    getTouchPosition(move);
+    drawCircle(ctx, touchX, touchY, 8);
+}
+
+}
 // canvas.addEventListener('ontouchstart', function (e){
 //   e.preventDefault();
 //   brushMove();

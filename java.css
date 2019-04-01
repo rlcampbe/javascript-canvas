@@ -11,6 +11,6 @@ overflow: hidden;
          window.orientation == 90;
    } */
 
-@media screen and (min-width:800px) {
-     width: 100%;
+@media screen and (min-width:600px) {
+     width: 80%;
 }
