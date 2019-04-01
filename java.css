@@ -2,20 +2,16 @@
 overflow: hidden;
 } */
 
-/* #canvas {
+#canvas {
   max-width: 640px;
   height: 1334px;
 } */
 
-/* @media screen and (orientation:portrait) {
+@media screen and (orientation:portrait) {
      window.orientation == 0;
    }
 
 @media screen and (orientation:landscape) {
          window.orientation == -90;
          window.orientation == 90;
-   } */
-
-@media screen and (max-width:800px) {
-  .left, .main, .right {
-    width:100%; 
+   }
