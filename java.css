@@ -2,10 +2,10 @@
 overflow: hidden;
 } */
 
-#canvas {
+/* #canvas {
   max-width: 100%;
   height: auto;
-}
+} */
 
 @media screen and (orientation:portrait) {
      window.orientation == 0;
