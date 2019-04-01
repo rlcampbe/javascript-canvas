@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width,user-scalable=no"/>
   <title>My Canvas</title>
   <link rel="stylesheet" type="text/css" href="css/default.css">
   <link rel="stylesheet" type="text/css" href="css/java.css">
@@ -9,7 +9,7 @@
 
 <body>
 
-<canvas id="canvas" width="1000" height="700" style="border:2px solid #000000;">
+<canvas id="canvas" width="800" height="450" style="border:2px solid #000000;">
 Your browser does not support the HTML5 canvas tag.</canvas>
 
 <script>
@@ -17,10 +17,11 @@ var canvas = document.querySelector('canvas');
 var ctx = canvas.getContext('2d');
 var x = 0
 var y = 0
-var colorPicker = document.querySelector('colorPicker')
 var defaultColor = 'red'
+var colorPicker = document.querySelector('colorPicker')
 var radius = 20
 var i = 2
+var touchX, touchY;
 draw();
 
 
@@ -31,7 +32,7 @@ function draw(){
     ctx.fill();
 }
 
-
+//mouse color changes
 window.addEventListener('mousemove', function (e) {
 console.log(e.pageX);
 x=e.pageX;
@@ -40,6 +41,11 @@ y=e.pageY;
 draw()
 })
 
+function colorChange(val){
+     defaultColor = val;
+}
+
+//keyboard color changes
 window.addEventListener('keyup', function (e) {
 if (e.keyCode==66){
     defaultColor = 'blue';
@@ -59,11 +65,11 @@ else if (e.keyCode==32){
   }
 
 else if (e.keyCode==40){
-    radius = (20-i, i>0)
+    radius = (20-i, i>0);
    }
 
 else if (e.keyCode==38){
-  radius = (20+i, i>0, i++)
+  radius = (20+i, i>0, i++);
   }
 
 console.log(e.keyCode);
@@ -74,40 +80,31 @@ draw()
 
 //window.addEventListener('resize', canvasSize, false); (this is more so for desktop?)
 
-window.addEventListener('orientationchange', canvasSize, false);
-canvasSize();
+//window.addEventListener('orientationchange', canvasSize, false);
+//canvasSize();
 
 
 //mobile touchscreen
 canvas.addEventListener('ontouchstart', function(e){
-console.log(e.pageX);
-x=e.pageX;
-console.log(e.pageY);
-y=e.pageY;
-draw()
-});
+    getTouchPos();
+    drawDot(ctx, touchX, touchY, 12);
+    event.preventDefault();
+})
 
 
 canvas.addEventListener('ontouchmove', function (e) {
-    x = e.touches[0].screenX;
-    y = e.touches[0].screenY;
-        });
+    getTouchPos();
+    drawDot(ctx, touchX, touchY, 12);
+    event.preventDefault();
+})
 
-canvas.addEventListener('ontouchend', function (e) {
-    x = e.touches[0].screenX;
-    y = e.touches[0].screenY;
-        });
+//canvas.addEventListener('ontouchend', function (e) {
 
 
-//space = 32
-//up arrow = 38
-//down arrow = 40
-//left arrow = 37
-//right arrow = 39
 </script>
 
 <label for="colorPicker">Click to pick a color:</label>
-<input type="color" id = "colorPicker" value="#ff0000">
+<input type="color" id = "colorPicker" value="#ff0000" onchange="colorChange(this.value)">
 
 </body>
 </html>

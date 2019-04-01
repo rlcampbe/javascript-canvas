@@ -1,8 +1,8 @@
+html body{
+overflow: hidden;
+}
 
-@media only screen and (min-width: 768px);
-
-
-@media only screen and (max-width: 600px) {
-  .canvas {
-      padding: 10px;
-  }
+#canvas {
+  max-width: 100%;
+  height: auto;
+}
