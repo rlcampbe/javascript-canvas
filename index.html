@@ -88,22 +88,29 @@ function nuCanvasSize(){
 canvas.addEventListener('orientationchange', canvasOrien, false);
 function canvasOrien(){
     window.orientation == 0
+    window.orientation == -90
+    window.orientation == 90
 }
 
 
 //mobile touchscreen
-canvas.addEventListener('ontouchstart', function(e){
-    getTouchPos();
-    drawDot(ctx, touchX, touchY, 12);
-    event.preventDefault();
-})
+canvas.ontouchstart = touchScreen();
 
+function touchScreen(){
 
-canvas.addEventListener('ontouchmove', function (e) {
-    getTouchPos();
-    drawDot(ctx, touchX, touchY, 12);
-    event.preventDefault();
-})
+}
+// canvas.addEventListener('ontouchstart', function(e){
+//     getTouchPos();
+//     drawDot(ctx, touchX, touchY, 12);
+//     event.preventDefault();
+// })
+//
+//
+// canvas.addEventListener('ontouchmove', function (e) {
+//     getTouchPos();
+//     drawDot(ctx, touchX, touchY, 12);
+//     event.preventDefault();
+// })
 
 //canvas.addEventListener('ontouchend', function (e) {
 
