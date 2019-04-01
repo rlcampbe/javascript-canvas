@@ -20,7 +20,7 @@ var y = 0
 var defaultColor = 'red'
 var colorPicker = document.querySelector('colorPicker')
 var radius = 20
-var i = 2
+var i = 1
 var touchX, touchY;
 draw();
 
@@ -65,7 +65,7 @@ else if (e.keyCode==32){
   }
 
 else if (e.keyCode==40){
-    radius = (20-i, i>0);
+    radius = (i>0);
    }
 
 else if (e.keyCode==38){
@@ -78,10 +78,17 @@ draw()
 
 //mobile orientation
 
-//window.addEventListener('resize', canvasSize, false); (this is more so for desktop?)
+canvas.addEventListener('resize', nuCanvasSize, false);
+function nuCanvasSize(){
+   canvas.width = window.innerWidth;
+   canvas.height = window.innerHeight;
+   draw();
+}
 
-//window.addEventListener('orientationchange', canvasSize, false);
-//canvasSize();
+canvas.addEventListener('orientationchange', canvasOrien, false);
+function canvasOrien(){
+
+}
 
 
 //mobile touchscreen
